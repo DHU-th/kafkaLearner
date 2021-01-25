@@ -1,13 +1,19 @@
 package dhu.tonghao.kafka;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.apache.kafka.common.PartitionInfo;
+import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Properties;
+import java.util.regex.Pattern;
 
 /**
  * @author TongHao on 2021/1/7
@@ -32,11 +38,35 @@ public class KafkaConsumerAnalysis {
     public static void main(String[] args) {
         Properties properties = KafkaConsumerAnalysis.initConfig();
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
-        /** 订阅主题,直接订阅只支持一个，第二次会覆盖。除非使用正则表达式 */
+        /** 订阅主题,直接订阅只支持一个，第二次会覆盖。使用正则表达式可以匹配多个
         consumer.subscribe(Collections.singletonList(topic));
-        while (true) {
-            ConsumerRecords<String, String> consumerRecords = consumer.poll(Duration.ofMillis(1000));
-            consumerRecords.forEach(System.out::println);
+        consumer.subscribe(Pattern.compile("kafka_demo.*"));
+         */
+        /** 同时指定多个主题下的多个分区，以列表的形式
+        consumer.assign(Collections.singletonList(new TopicPartition(topic, 0)));
+         */
+        // 获取该主题下的分区信息
+        List<PartitionInfo> partitionInfos = consumer.partitionsFor(topic);
+        List<TopicPartition> topicPartitionList = new ArrayList<>();
+        partitionInfos.forEach(e -> topicPartitionList.add(new TopicPartition(e.topic(), e.partition())));
+        consumer.assign(topicPartitionList);
+        try {
+            for (int i = 0; i < 100; i++) {
+                ConsumerRecords<String, String> consumerRecords = consumer.poll(Duration.ofMillis(1000));
+                /* 按照主题-分区进行消费 */
+                for (TopicPartition topicPartition : consumerRecords.partitions()) {
+                    for (ConsumerRecord<String, String> record : consumerRecords.records(topicPartition)) {
+                        System.out.println("分区信息："+record.partition() + " 消息信息：" + record.value());
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            //取消订阅
+            consumer.unsubscribe();
+            consumer.close();
         }
+
     }
 }
