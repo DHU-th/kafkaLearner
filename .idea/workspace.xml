@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6a863c6-a073-4c4c-97d5-0145ee4146c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/serialization/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/serialization/EntityConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/serialization/EntityDeserializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/serialization/EntityProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/serialization/EntitySerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/commit/CommittedConsumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/KafkaConsumerAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/KafkaConsumerAnalysis.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +44,20 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
-  <component name="RunManager" selected="Application.EntityConsumer">
+  <component name="RunManager" selected="Application.CommittedConsumer">
+    <configuration name="CommittedConsumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dhu.tonghao.kafka.commit.CommittedConsumer" />
+      <module name="kafkaLearner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dhu.tonghao.kafka.commit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Entity" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dhu.tonghao.kafka.serialization.Entity" />
       <module name="kafkaLearner" />
@@ -90,19 +97,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KafkaConsumerAnalysis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="dhu.tonghao.kafka.KafkaConsumerAnalysis" />
-      <module name="kafkaLearner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dhu.tonghao.kafka.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="KafkaProducerAnalysis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dhu.tonghao.kafka.KafkaProducerAnalysis" />
       <module name="kafkaLearner" />
@@ -118,11 +112,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CommittedConsumer" />
+        <item itemvalue="Application.KafkaProducerAnalysis" />
         <item itemvalue="Application.EntityConsumer" />
         <item itemvalue="Application.EntityProducer" />
         <item itemvalue="Application.Entity" />
-        <item itemvalue="Application.KafkaConsumerAnalysis" />
-        <item itemvalue="Application.KafkaProducerAnalysis" />
       </list>
     </recent_temporary>
   </component>
@@ -139,7 +133,7 @@
       <workItem from="1611480536825" duration="1340000" />
       <workItem from="1611485819211" duration="7307000" />
       <workItem from="1611544826050" duration="3054000" />
-      <workItem from="1611558163115" duration="13880000" />
+      <workItem from="1611558163115" duration="22307000" />
     </task>
     <servers />
   </component>
@@ -190,38 +184,38 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2331" y="386" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611584518720" />
-    <state width="1877" height="415" key="GridCell.Tab.0.bottom" timestamp="1611590226854">
+    <state width="1877" height="252" key="GridCell.Tab.0.bottom" timestamp="1611641492579">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="415" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611590226854" />
-    <state width="1877" height="415" key="GridCell.Tab.0.center" timestamp="1611590226854">
+    <state width="1877" height="252" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611641492579" />
+    <state width="1877" height="252" key="GridCell.Tab.0.center" timestamp="1611641492579">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="415" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611590226854" />
-    <state width="1877" height="415" key="GridCell.Tab.0.left" timestamp="1611590226854">
+    <state width="1877" height="252" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611641492579" />
+    <state width="1877" height="252" key="GridCell.Tab.0.left" timestamp="1611641492579">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="415" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611590226854" />
-    <state width="1877" height="415" key="GridCell.Tab.0.right" timestamp="1611590226854">
+    <state width="1877" height="252" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611641492579" />
+    <state width="1877" height="252" key="GridCell.Tab.0.right" timestamp="1611641492579">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="415" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611590226854" />
-    <state width="1877" height="121" key="GridCell.Tab.1.bottom" timestamp="1611590120544">
+    <state width="1877" height="252" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611641492579" />
+    <state width="1877" height="252" key="GridCell.Tab.1.bottom" timestamp="1611641492579">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="121" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611590120544" />
-    <state width="1877" height="121" key="GridCell.Tab.1.center" timestamp="1611590120544">
+    <state width="1877" height="252" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611641492579" />
+    <state width="1877" height="252" key="GridCell.Tab.1.center" timestamp="1611641492579">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="121" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611590120544" />
-    <state width="1877" height="121" key="GridCell.Tab.1.left" timestamp="1611590120544">
+    <state width="1877" height="252" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611641492579" />
+    <state width="1877" height="252" key="GridCell.Tab.1.left" timestamp="1611641492579">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="121" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611590120544" />
-    <state width="1877" height="121" key="GridCell.Tab.1.right" timestamp="1611590120544">
+    <state width="1877" height="252" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611641492579" />
+    <state width="1877" height="252" key="GridCell.Tab.1.right" timestamp="1611641492579">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="121" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611590120544" />
+    <state width="1877" height="252" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611641492579" />
     <state x="2332" y="277" width="998" height="730" key="SettingsEditor" timestamp="1611587502305">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -230,6 +224,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2560" y="344" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611558519439" />
+    <state x="2381" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1611641488272">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2381" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611641488272" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1611572770656">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -246,15 +244,20 @@
           </properties>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/KafkaConsumerAnalysis.java</url>
           <line>47</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/serialization/Entity.java</url>
           <line>33</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/commit/CommittedConsumer.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
