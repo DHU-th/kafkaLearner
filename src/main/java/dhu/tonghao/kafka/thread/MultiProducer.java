@@ -1,4 +1,4 @@
-package dhu.tonghao.kafka;
+package dhu.tonghao.kafka.thread;
 
 import java.util.Properties;
 import java.util.Scanner;
@@ -6,14 +6,7 @@ import java.util.Scanner;
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
 
-import dhu.tonghao.kafka.interceptor.ProducerInterceptorAnalysis;
-import dhu.tonghao.kafka.interceptor.ProducerInterceptorAnalysis2;
-
-/**
- * @author TongHao on 2021/1/7
- */
-public class KafkaProducerAnalysis {
-
+public class MultiProducer {
     /** 有多个可以用逗号隔开 */
     public static final String brokerList = "47.93.121.123:9092,47.93.121.123:9093,47.93.121.123:9094";
     public static final String topic = "server-cluster";
@@ -26,18 +19,18 @@ public class KafkaProducerAnalysis {
         properties.put(ProducerConfig.CLIENT_ID_CONFIG, "0");
         properties.put(ProducerConfig.ACKS_CONFIG, "1");
         properties.put(ProducerConfig.RETRIES_CONFIG, 10); //重试次数
-        properties.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG,
-                ProducerInterceptorAnalysis.class.getName() + "," + ProducerInterceptorAnalysis2.class.getName());
         return properties;
     }
 
     public static void main(String[] args) {
-        Properties properties = KafkaProducerAnalysis.initConfig();
+        Properties properties = MultiProducer.initConfig();
         KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < 5; i++) {
             try {
-                ProducerRecord<String, String> producerRecord = new ProducerRecord<>(topic, scanner.nextLine());
+                String key = scanner.nextLine();
+                String value = scanner.nextLine();
+                ProducerRecord<String, String> producerRecord = new ProducerRecord<>(topic, key, value);
                 producer.send(producerRecord, new Callback() {
                     @Override
                     public void onCompletion(RecordMetadata metadata, Exception exception) {
@@ -45,7 +38,8 @@ public class KafkaProducerAnalysis {
                             //TODO
                             exception.printStackTrace();
                         } else {
-                            System.out.println(metadata.topic() + "-" + metadata.partition() + "-" + metadata.offset());
+                            System.out.println(
+                                    metadata.topic() + "-" + metadata.partition() + "-" + metadata.offset() + "发送成功！");
 
                         }
                     }

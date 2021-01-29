@@ -18,8 +18,8 @@ import org.apache.kafka.common.serialization.StringDeserializer;
  */
 public class KafkaConsumerAnalysis {
     /** 有多个可以用逗号隔开 */
-    public static final String brokerList = "47.93.121.123:9092";
-    public static final String topic = "kafka_demo_analysis";
+    public static final String brokerList = "47.93.121.123:9092,47.93.121.123:9093,47.93.121.123:9094";
+    public static final String topic = "server-cluster";
     /** 消费组的名称 */
     public static final String groupId = "kafka-learner";
 
@@ -51,7 +51,7 @@ public class KafkaConsumerAnalysis {
         partitionInfos.forEach(e -> topicPartitionList.add(new TopicPartition(e.topic(), e.partition())));
         consumer.assign(topicPartitionList);
         try {
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 100000; i++) {
                 ConsumerRecords<String, String> consumerRecords = consumer.poll(Duration.ofMillis(1000));
                 /* 按照主题-分区进行消费 */
                 for (TopicPartition topicPartition : consumerRecords.partitions()) {

@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6a863c6-a073-4c4c-97d5-0145ee4146c0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/thread/MultiProducer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/seek/SeekConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/seek/SeekConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/KafkaConsumerAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/KafkaConsumerAnalysis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/KafkaProducerAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/KafkaProducerAnalysis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/thread/KafkaConsumerThread1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/thread/KafkaConsumerThread1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/thread/MultiConsumerDemo1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/thread/MultiConsumerDemo1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +48,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
-  <component name="RunManager" selected="Application.CommittedConsumer">
+  <component name="RunManager" selected="Application.MultiConsumerDemo1">
     <configuration name="CommittedConsumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dhu.tonghao.kafka.commit.CommittedConsumer" />
       <module name="kafkaLearner" />
@@ -58,38 +62,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Entity" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="dhu.tonghao.kafka.serialization.Entity" />
+    <configuration name="KafkaConsumerAnalysis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dhu.tonghao.kafka.KafkaConsumerAnalysis" />
       <module name="kafkaLearner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dhu.tonghao.kafka.serialization.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EntityConsumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="dhu.tonghao.kafka.serialization.EntityConsumer" />
-      <module name="kafkaLearner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dhu.tonghao.kafka.serialization.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EntityProducer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="dhu.tonghao.kafka.serialization.EntityProducer" />
-      <module name="kafkaLearner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dhu.tonghao.kafka.serialization.*" />
+          <option name="PATTERN" value="dhu.tonghao.kafka.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -110,13 +88,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MultiConsumerDemo1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dhu.tonghao.kafka.thread.MultiConsumerDemo1" />
+      <module name="kafkaLearner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dhu.tonghao.kafka.thread.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MultiProducer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dhu.tonghao.kafka.thread.MultiProducer" />
+      <module name="kafkaLearner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dhu.tonghao.kafka.thread.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CommittedConsumer" />
+        <item itemvalue="Application.MultiConsumerDemo1" />
+        <item itemvalue="Application.MultiProducer" />
+        <item itemvalue="Application.KafkaConsumerAnalysis" />
         <item itemvalue="Application.KafkaProducerAnalysis" />
-        <item itemvalue="Application.EntityConsumer" />
-        <item itemvalue="Application.EntityProducer" />
-        <item itemvalue="Application.Entity" />
+        <item itemvalue="Application.CommittedConsumer" />
       </list>
     </recent_temporary>
   </component>
@@ -136,7 +140,7 @@
       <workItem from="1611558163115" duration="28441000" />
       <workItem from="1611670071821" duration="3166000" />
       <workItem from="1611749377599" duration="11012000" />
-      <workItem from="1611802266287" duration="3141000" />
+      <workItem from="1611802266287" duration="12393000" />
     </task>
     <servers />
   </component>
@@ -192,25 +196,29 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2331" y="386" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611584518720" />
-    <state width="1877" height="490" key="GridCell.Tab.0.bottom" timestamp="1611661788855">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2005" height="512" key="GridCell.Tab.0.bottom" timestamp="1611910960284">
+      <screen x="1920" y="0" width="2048" height="1112" />
     </state>
     <state width="1877" height="284" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611645253085" />
+    <state width="2005" height="512" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.2048.1112@1920.0.2048.1112" timestamp="1611910960284" />
     <state width="1877" height="490" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611661788855" />
-    <state width="1877" height="490" key="GridCell.Tab.0.center" timestamp="1611661788855">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2005" height="512" key="GridCell.Tab.0.center" timestamp="1611910960283">
+      <screen x="1920" y="0" width="2048" height="1112" />
     </state>
     <state width="1877" height="284" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611645253085" />
+    <state width="2005" height="512" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.2048.1112@1920.0.2048.1112" timestamp="1611910960283" />
     <state width="1877" height="490" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1611661788855" />
-    <state width="1877" height="490" key="GridCell.Tab.0.left" timestamp="1611661788855">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2005" height="512" key="GridCell.Tab.0.left" timestamp="1611910960283">
+      <screen x="1920" y="0" width="2048" height="1112" />
     </state>
     <state width="1877" height="284" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611645253085" />
+    <state width="2005" height="512" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.2048.1112@1920.0.2048.1112" timestamp="1611910960283" />
     <state width="1877" height="490" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1611661788855" />
-    <state width="1877" height="490" key="GridCell.Tab.0.right" timestamp="1611661788855">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2005" height="512" key="GridCell.Tab.0.right" timestamp="1611910960283">
+      <screen x="1920" y="0" width="2048" height="1112" />
     </state>
     <state width="1877" height="284" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611645253085" />
+    <state width="2005" height="512" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.2048.1112@1920.0.2048.1112" timestamp="1611910960283" />
     <state width="1877" height="490" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611661788855" />
     <state width="1877" height="284" key="GridCell.Tab.1.bottom" timestamp="1611661787405">
       <screen x="0" y="0" width="1536" height="824" />
@@ -270,7 +278,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/dhu/tonghao/kafka/KafkaProducerAnalysis.java</url>
-          <line>30</line>
+          <line>33</line>
           <properties class="dhu.tonghao.kafka.KafkaProducerAnalysis" method="main">
             <option name="EMULATED" value="true" />
           </properties>

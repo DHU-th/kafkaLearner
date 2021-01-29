@@ -10,10 +10,11 @@ import org.apache.kafka.common.serialization.StringDeserializer;
 
 public class MultiConsumerDemo1 {
     /** 有多个可以用逗号隔开 */
-    public static final String brokerList = "47.93.121.123:9092";
-    public static final String topic = "kafka_demo_analysis";
+    /** 有多个可以用逗号隔开 */
+    public static final String brokerList = "47.93.121.123:9092,47.93.121.123:9093,47.93.121.123:9094";
+    public static final String topic = "server-cluster";
     /** 消费组的名称 */
-    public static final String groupId = "kafka-learner";
+    public static final String groupId = "kafka-learner-集群消费";
 
     public static Properties initConfig() {
         Properties properties = new Properties();
